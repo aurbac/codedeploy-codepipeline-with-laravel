@@ -62,7 +62,7 @@ Hello, this is a self-paced workshop designed to explore the AWS Code Suite (AWS
 
 4.7\. For **IAM Role** select **WebServerRole** created previously.
 
-4.8\. In **Advanced Details** expand the section, copy the content file of  and paste it in **User data** as text. 
+4.8\. In **Advanced Details** expand the section, copy the [content file](https://raw.githubusercontent.com/aurbac/codedeploy-codepipeline-with-laravel/master/scripts/bootstrap-codecommit.sh) and paste it in **User data** as text. 
 
 4.9\. Choose **Next: Add Storage** and **Next: Add Tags**.
 
@@ -80,13 +80,13 @@ Protocol: TCP
 Port Range: 80
 Source: Anywhere 0.0.0.0/0
 
-4.11\. Choose **Review and Launch**.
+4.12\. Choose **Review and Launch**.
 
-4.12\. In **Step 7: Review Instance Launch** choose **Launch**.
+4.13\. In **Step 7: Review Instance Launch** choose **Launch**.
 
-4.13\. Select the check box for the key pair that you created or create a new one, and then choose **Launch Instances**.
+4.14\. Select the check box for the key pair that you created or create a new one, and then choose **Launch Instances**.
 
-4.14\. Choose **View instances**.
+4.15\. Choose **View instances**.
 
 ## 5. Create a Service Role for AWS CodeDeploy
 
@@ -104,42 +104,42 @@ Source: Anywhere 0.0.0.0/0
 
 5.7\. On the **Review** page, in Role name type `CodeDeployServiceRole` and then choose **Create role**.
 
-## 5. Create a AWS CodeDeploy application
+## 6. Create a AWS CodeDeploy application
 
-5.1\. Open the AWS CodeDeploy console at https://console.aws.amazon.com/codedeploy/.
+6.1\. Open the AWS CodeDeploy console at https://console.aws.amazon.com/codedeploy/.
 
-5.2\. Choose **Create application**.
+6.2\. Choose **Create application**.
 
-5.3\. In **Application name**, type the name `OurExperiences` for your application.
+6.3\. In **Application name**, type the name `OurExperiences` for your application.
 
-5.4\. From **Compute Platform**, choose **EC2/On-premises**.
+6.4\. From **Compute Platform**, choose **EC2/On-premises**.
 
-5.5\. Choose **Create application**.
+6.5\. Choose **Create application**.
 
-5.6\. On your application page, from the **Deployment groups tab**, choose **Create deployment group**.
+6.6\. On your application page, from the **Deployment groups tab**, choose **Create deployment group**.
 
-5.7\. In **Deployment group name**, type `Production`.
+6.7\. In **Deployment group name**, type `Production`.
 
-5.7\. In **Service role**, select the role `CodeDeployServiceRole` created previously.
+6.8\. In **Service role**, select the role `CodeDeployServiceRole` created previously.
 
-5.8\. In **Environment configuration**, select **Amazon EC2 instances** and for **Key** type `Environment` and for **Value** type `Production`.
+6.9\. In **Environment configuration**, select **Amazon EC2 instances** and for **Key** type `Environment` and for **Value** type `Production`.
 
-5.9\. For **Load balancer** uncheck **Enable load balancing** and choose **Create deployment group**.
+6.10\. For **Load balancer** uncheck **Enable load balancing** and choose **Create deployment group**.
 
-## 5. Create a AWS Pipeline
+## 7. Create a AWS Pipeline
 
-5.1\. Open the AWS CodePipeline console at https://console.aws.amazon.com/codepipeline/.
+7.1\. Open the AWS CodePipeline console at https://console.aws.amazon.com/codepipeline/.
 
-5.2\. Choose **Create pipeline**.
+7.2\. Choose **Create pipeline**.
 
-5.3\. In **Choose pipeline settings**, for **Pipeline name** type `OurExperiences` and choose **Next**.
+7.3\. In **Choose pipeline settings**, for **Pipeline name** type `OurExperiences` and choose **Next**.
 
-5.4\. In **Add source stage**, for **Source provider** select **AWS CodeCommit**.
+7.4\. In **Add source stage**, for **Source provider** select **AWS CodeCommit**.
 
-5.5\. For **Repository name** select **OurExperiences** and for **Branch name** select **master**. Choose **Next**.
+7.5\. For **Repository name** select **OurExperiences** and for **Branch name** select **master**. Choose **Next**.
 
-5.6\. In **Add build stage**, choose **Skip build stage** and click **Skip**.
+7.6\. In **Add build stage**, choose **Skip build stage** and click **Skip**.
 
-5.7\. In **Add deploy stage**, for **Deploy provider** select **AWS CodeDeploy**, for **Application name** select **OurExperiences**, for **Deployment group** select **Production** and choose **Next**.
+7.7\. In **Add deploy stage**, for **Deploy provider** select **AWS CodeDeploy**, for **Application name** select **OurExperiences**, for **Deployment group** select **Production** and choose **Next**.
 
-5.8\. Choose **Create pipeline**.
+7.8\. Choose **Create pipeline**.
