@@ -104,7 +104,7 @@ Source: Anywhere 0.0.0.0/0
 
 5.7\. On the **Review** page, in Role name type `CodeDeployServiceRole` and then choose **Create role**.
 
-## 6. Create a AWS CodeDeploy application
+## 6. Create an AWS CodeDeploy application
 
 6.1\. Open the AWS CodeDeploy console at https://console.aws.amazon.com/codedeploy/.
 
@@ -126,7 +126,7 @@ Source: Anywhere 0.0.0.0/0
 
 6.10\. For **Load balancer** uncheck **Enable load balancing** and choose **Create deployment group**.
 
-## 7. Create a AWS Pipeline
+## 7. Create an AWS CodePipeline for continuous delivery
 
 7.1\. Open the AWS CodePipeline console at https://console.aws.amazon.com/codepipeline/.
 
