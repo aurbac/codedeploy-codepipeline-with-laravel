@@ -1,9 +1,16 @@
 #!/bin/bash -xe
 
 sudo yum update -y
-sudo yum install httpd git -y
+sudo yum install httpd git ruby wget -y
 sudo amazon-linux-extras install -y php7.2
 sudo yum install php-dom php-gd php-mbstring -y
+
+sudo wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+
+sudo systemctl start codedeploy-agent
+sudo systemctl enable codedeploy-agent
 
 sudo rm -rf /var/www/html
 

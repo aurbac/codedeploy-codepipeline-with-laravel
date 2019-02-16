@@ -5,7 +5,15 @@ sudo yum install httpd git -y
 sudo amazon-linux-extras install -y php7.2
 sudo yum install php-dom php-gd php-mbstring -y
 
+sudo wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+
+sudo systemctl start codedeploy-agent
+sudo systemctl enable codedeploy-agent
+
 sudo rm -rf /var/www/html
+
 sudo git clone https://github.com/aurbac/laravel-our-experiences.git /var/www/html
 
 sudo /usr/bin/php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
