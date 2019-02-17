@@ -16,7 +16,7 @@ Hello, this is a self-paced workshop designed to explore the AWS Code Suite (AWS
 
 1.6\. Now inside the **bash** terminal clone the reposiotry with `git clone https://github.com/aurbac/laravel-our-experiences.git`.
 
-## 2. Create CodeCommit repository 
+## 2. Create CodeCommit repository
 
 2.1\. Open the AWS CodeCommit console at https://console.aws.amazon.com/codesuite/codecommit/repositories.
 
@@ -62,7 +62,8 @@ Hello, this is a self-paced workshop designed to explore the AWS Code Suite (AWS
 
 4.7\. For **IAM Role** select **WebServerRole** created previously.
 
-4.8\. In **Advanced Details** expand the section, copy the [content file](https://raw.githubusercontent.com/aurbac/codedeploy-codepipeline-with-laravel/master/scripts/bootstrap-codecommit.sh) and paste it in **User data** as text. 
+4.8\. In **Advanced Details** expand the section, copy the [content file](https://raw.githubusercontent.com/aurbac/codedeploy-codepipeline-with-laravel/master/scripts/bootstrap-codecommit.sh) and paste it in **User data** as text.
+In User data you are passing sentences to install web server, install CodeDeploy agent, download code from CodeCommit and configure Laravel application.
 
 4.9\. Choose **Next: Add Storage** and **Next: Add Tags**.
 
@@ -143,3 +144,11 @@ Source: Anywhere 0.0.0.0/0
 7.7\. In **Add deploy stage**, for **Deploy provider** select **AWS CodeDeploy**, for **Application name** select **OurExperiences**, for **Deployment group** select **Production** and choose **Next**.
 
 7.8\. Choose **Create pipeline**.
+
+## Additional Resources
+
+AWS Cloud9 – Cloud Developer Environments https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/
+AWS CodeCommit https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html
+AWS CodeDeploy https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials.html
+Install CodeDeploy Agent https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install.html
+Set Up a CI/CD Pipeline on AWS https://aws.amazon.com/getting-started/projects/set-up-ci-cd-pipeline/
