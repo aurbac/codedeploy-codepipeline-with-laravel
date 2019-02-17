@@ -2,6 +2,8 @@
 
 Hello, this is a self-paced workshop designed to explore the AWS Code Suite (AWS CodeCommit, AWS CodeDeploy and AWS CodePipeline).
 
+![Continuos Deployment AWS](https://github.com/aurbac/codedeploy-codepipeline-with-laravel/raw/master/images/continuos-deployment-aws.png)
+
 ## 1. Create Cloud9 instance for development
 
 1.1\. Open the AWS Cloud9 console at https://console.aws.amazon.com/cloud9/.
@@ -148,7 +150,11 @@ Source: Anywhere 0.0.0.0/0
 ## Additional Resources
 
 AWS Cloud9 – Cloud Developer Environments https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/
+
 AWS CodeCommit https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html
+
 AWS CodeDeploy https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials.html
+
 Install CodeDeploy Agent https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install.html
+
 Set Up a CI/CD Pipeline on AWS https://aws.amazon.com/getting-started/projects/set-up-ci-cd-pipeline/
