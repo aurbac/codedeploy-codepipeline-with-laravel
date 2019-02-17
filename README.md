@@ -131,6 +131,8 @@ Open a new browser tab and browse the Web server by entering the EC2 instance's 
 
 6.10\. For **Load balancer** uncheck **Enable load balancing** and choose **Create deployment group**.
 
+The Laravel application is prepared with the specification files (appspec.yml and scripts) required to define the instructions for deployment. More information https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html
+
 ## 7. Create an AWS CodePipeline for continuous deployment
 
 7.1\. Open the AWS CodePipeline console at https://console.aws.amazon.com/codepipeline/.
@@ -168,5 +170,7 @@ AWS CodeCommit https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.h
 AWS CodeDeploy https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials.html
 
 Install CodeDeploy Agent https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install.html
+
+CodeDeploy AppSpec File Reference https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html
 
 Set Up a CI/CD Pipeline on AWS https://aws.amazon.com/getting-started/projects/set-up-ci-cd-pipeline/
