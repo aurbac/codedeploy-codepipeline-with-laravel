@@ -91,7 +91,7 @@ Source: Anywhere 0.0.0.0/0
 
 4.15\. Choose **View instances**.
 
-Open a new browser tab and browse the Web server by entering the EC2 instance's Public DNS name into the browser. The EC2 instance's Public DNS name can be found in the console by reviewing the **Public DNS** name in the description instance.
+Open a new browser tab and browse the Web server by entering the EC2 instance's Public DNS name into the browser. The EC2 instance's Public DNS name can be found in the console by reviewing the **Public DNS** name in the description section.
 
 ## 5. Create a Service Role for AWS CodeDeploy
 
@@ -131,7 +131,7 @@ Open a new browser tab and browse the Web server by entering the EC2 instance's 
 
 6.10\. For **Load balancer** uncheck **Enable load balancing** and choose **Create deployment group**.
 
-## 7. Create an AWS CodePipeline for continuous delivery
+## 7. Create an AWS CodePipeline for continuous deployment
 
 7.1\. Open the AWS CodePipeline console at https://console.aws.amazon.com/codepipeline/.
 
@@ -148,6 +148,17 @@ Open a new browser tab and browse the Web server by entering the EC2 instance's 
 7.7\. In **Add deploy stage**, for **Deploy provider** select **AWS CodeDeploy**, for **Application name** select **OurExperiences**, for **Deployment group** select **Production** and choose **Next**.
 
 7.8\. Choose **Create pipeline**.
+
+## 8. Create an AWS CodePipeline for continuous delivery
+
+8.1\. Inside your Cloud9 environment navigate to **laravel-our-experiences/resources/views/** and edit the file **welcome.blade.php** by adding HTML text inside section content.
+
+8.2\. In bash terminal go to the project folder `cd /home/ec2-user/environment/laravel-our-experiences/`.
+
+8.3\. Send the new changes to AWS CodeCommit with `git add .`, `git commit -m 'First change'` and `git push codecommit`.
+
+8.4\. Once you push changes to AWS CodeCommit, the AWS Pipeline will be triggered and the application will be deployed to the EC2 instance.
+
 
 ## Additional Resources
 
