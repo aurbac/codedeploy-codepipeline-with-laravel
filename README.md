@@ -157,8 +157,7 @@ Open a new browser tab and browse the Web server by entering the EC2 instance's 
 
 8.3\. Send the new changes to AWS CodeCommit with `git add .`, `git commit -m 'First change'` and `git push codecommit`.
 
-8.4\. Once you push changes to AWS CodeCommit, the AWS Pipeline will be triggered and the application will be deployed to the EC2 instance.
-
+8.4\. Once you push changes to AWS CodeCommit, the AWS CodePipeline will be triggered and the application will be deployed to the EC2 instance.
 
 ## Additional Resources
 
