@@ -91,6 +91,8 @@ Source: Anywhere 0.0.0.0/0
 
 4.15\. Choose **View instances**.
 
+Open a new browser tab and browse the Web server by entering the EC2 instance's Public DNS name into the browser. The EC2 instance's Public DNS name can be found in the console by reviewing the **Public DNS** name in the description instance.
+
 ## 5. Create a Service Role for AWS CodeDeploy
 
 5.1\. Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/.
