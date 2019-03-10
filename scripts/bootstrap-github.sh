@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 
 sudo yum update -y
-sudo yum install httpd git -y
+sudo yum install httpd git ruby wget -y
 sudo amazon-linux-extras install -y php7.2
 sudo yum install php-dom php-gd php-mbstring -y
 
