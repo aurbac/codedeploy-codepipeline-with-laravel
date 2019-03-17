@@ -2,8 +2,8 @@
 
 sudo yum update -y
 sudo yum install httpd git ruby wget -y
-sudo amazon-linux-extras install -y php7.2
-sudo yum install php-dom php-gd php-mbstring -y
+sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+sudo yum install php-dom php-gd php-mbstring mariadb-server -y
 
 sudo wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
 sudo chmod +x ./install
@@ -11,6 +11,9 @@ sudo ./install auto
 
 sudo systemctl start codedeploy-agent
 sudo systemctl enable codedeploy-agent
+
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
 
 sudo rm -rf /var/www/html
 
@@ -24,11 +27,20 @@ sudo /usr/bin/php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 
 sudo cp /var/www/html/.env.example /var/www/html/.env
+sudo cp /var/www/html/config/aws.php.example /var/www/html/config/aws.php
+
+sudo sed -i 's/DB_DATABASE=homestead/DB_DATABASE=our_experiences/g' /var/www/html/.env
+sudo sed -i 's/DB_USERNAME=homestead/DB_USERNAME=root/g' /var/www/html/.env
+sudo sed -i 's/DB_PASSWORD=secret/DB_PASSWORD=/g' /var/www/html/.env
+
+sudo mysql -u root -e "CREATE DATABASE our_experiences CHARACTER SET utf8 COLLATE utf8_general_ci;"
 
 sudo cd /var/www/html
 sudo /usr/local/bin/composer install --working-dir=/var/www/html --optimize-autoloader --no-dev
 sudo /usr/bin/php /var/www/html/artisan key:generate
 sudo /usr/bin/php /var/www/html/artisan config:cache
+
+sudo /usr/bin/php /var/www/html/artisan migrate
 
 sudo chown apache:apache /var/www/html -R
 sudo chmod 777 /var/www/html/storage -R
