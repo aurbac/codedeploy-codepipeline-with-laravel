@@ -64,7 +64,7 @@ Hello, this is a self-paced workshop designed to explore the AWS Code Suite (AWS
 
 4.7\. For **IAM Role** select **WebServerRole** created previously.
 
-4.8\. In **Advanced Details** expand the section, copy the [content file](https://raw.githubusercontent.com/aurbac/codedeploy-codepipeline-with-laravel/master/scripts/bootstrap-codecommit.sh) and paste it in **User data** as text.
+4.8\. Expand the section **Advanced Details**, copy the [content file](https://raw.githubusercontent.com/aurbac/codedeploy-codepipeline-with-laravel/master/scripts/bootstrap-codecommit.sh) and paste it in **User data** as text.
 In User data you are passing sentences to install web server, install CodeDeploy agent, download code from CodeCommit and configure Laravel application.
 
 4.9\. Choose **Next: Add Storage** and **Next: Add Tags**.
